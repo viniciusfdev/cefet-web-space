@@ -1,2 +1,11 @@
 // Faça o exercício dos PARÁGRAFOS aqui
-// Este arquivo AINDA NÃO ESTÁ INCLUÍDO no arquivo HTML
+
+const expandableButtons = document.querySelectorAll(".botao-expandir-retrair");
+
+expandableButtons.forEach((element) => {
+  element.onclick = (event) => {
+    const parent = event.target.parentNode;
+    event.target.innerHTML = event.target.innerHTML === "+" ? "-" : "+";
+    parent.classList.toggle("expandido");
+  };
+});
